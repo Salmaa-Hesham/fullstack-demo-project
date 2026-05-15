@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+  labels:
+    app: backend-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: backend-app
+  template:
+    metadata:
+      labels:
+        app: backend-app
+    spec:
+      containers:
+      - name: backend
+        image: salmahesham1114/fullstack-demo-project:backend
+        ports:
+        - containerPort: 5000
+        envFrom:
+        - configMapRef:
+            name: fullstack-demo-configmap
+        - secretRef:
+            name: fullstack-demo-secret
+

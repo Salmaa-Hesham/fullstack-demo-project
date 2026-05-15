@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: fullstack-demo-configmap
+data:
+  DB_PORT: "5432"
+  DB_NAME: "demo_db"
+  DB_USER: "demo_user"
+  NODE_ENV: "production"
+  PORT: "5000"
+  DB_HOST: "postgres-svc"
+
+  POSTGRES_USER: "demo_user"
+  POSTGRES_DB: "demo_db"
