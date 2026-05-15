@@ -78,8 +78,8 @@ pipeline {
         stage('Deploy to Kubernetes'){
             steps {
                 sh '''
-
-                kubectl apply -f manifests/*
+                echo "Deploying manifests to Kubernetes..."
+                kubectl apply -f manifests/
 
                 '''
             }
