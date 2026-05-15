@@ -68,9 +68,9 @@ pipeline {
                 sh '''
                     echo "Updating Kubernetes deployment files with new image tags..."
 
-                    sed -i "s|image: salmahesham1114/fullstack-demo-project:backend.*|image: $BACKEND_IMAGE|g" Deployment-backend.yml
+                    sed -i "s|image: salmahesham1114/fullstack-demo-project:backend.*|image: $BACKEND_IMAGE|g" fullstack-back-Deployment.yml
 
-                    sed -i "s|image: salmahesham1114/fullstack-demo-project:frontend.*|image: $FRONTEND_IMAGE|g" Deployment-frontend.yml
+                    sed -i "s|image: salmahesham1114/fullstack-demo-project:frontend.*|image: $FRONTEND_IMAGE|g" fullstack-front-Deployment.yml
                 '''
             }
         }
